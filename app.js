@@ -7,13 +7,13 @@ const containersLine = document.querySelector('.containers__line');
 const logo = document.querySelectorAll('.logo');
 const firstContainerButton = document.querySelector('.first-container__btn');
 const popupLine = document.querySelector('.popup__bodies');
-const pag1 = document.querySelector('.pag-1');
-const pag2 = document.querySelector('.pag-2');
+const pag1 = document.querySelector('.pagination__sircle-1');
+const pag2 = document.querySelector('.pagination__sircle-2');
 
 let offsetThird = 0;
 let offset = 0;
 
-document.querySelector('.popup__next').addEventListener('click', function () {
+document.querySelector('.pagination__btn-next').addEventListener('click', function () {
   offsetThird = offsetThird + 450;
   if (offsetThird > 450) {
     offsetThird = 0;
@@ -23,7 +23,7 @@ document.querySelector('.popup__next').addEventListener('click', function () {
   pag2.classList.toggle('pag-active');
 });
 
-document.querySelector('.popup__prev').addEventListener('click', function () {
+document.querySelector('.pagination__btn-prev').addEventListener('click', function () {
   offsetThird = offsetThird - 450;
   if (offsetThird < 0) {
     offsetThird = 450;
@@ -33,18 +33,12 @@ document.querySelector('.popup__prev').addEventListener('click', function () {
   pag2.classList.toggle('pag-active');
 });
 
-logo[0].addEventListener('click', () => {
-  offset = 0;
-  containersLine.style.left = -offset + 'px';
-});
-logo[1].addEventListener('click', () => {
-  offset = 0;
-  containersLine.style.left = -offset + 'px';
-});
-logo[2].addEventListener('click', () => {
-  offset = 0;
-  containersLine.style.left = -offset + 'px';
-});
+for (let i = 0; i < logo.length; i++) {
+  logo[i].addEventListener('click', () => {
+    offset = 0;
+    containersLine.style.left = -offset + 'px';
+  });
+}
 
 firstContainerButton.addEventListener('click', () => {
   offset = 1024;

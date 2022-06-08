@@ -1,18 +1,15 @@
 @font-face {
   font-weight: 300;
   font-family: 'Gilroy';
-  src: url('./font-family/Gilroy-Light.ttf') format('truetype');
+  src: url('./font-family/Gilroy-Light.ttf') format('truetype'), url('./font-family/Gilroy-Light.woff') format('woff');
   font-style: normal;
-  font-weight: normal;
 }
 @font-face {
   font-weight: 300;
   font-family: 'D IN Pro';
-  src: url('./font-family/DINPro.ttf') format('truetype');
+  src: url('./font-family/DINPro.ttf') format('truetype'), url('./font-family/DINPro-Light.woff') format('woff');
   font-style: normal;
-  font-weight: normal;
 }
-/* 'D IN Pro' , 'Gilroy',  */
 html {
   overflow: hidden;
 }
@@ -37,7 +34,7 @@ body {
   border-top: 1px solid transparent;
 }
 
-.header {
+.containers__header {
   position: absolute;
   display: flex;
   justify-content: space-around;
@@ -78,7 +75,7 @@ body {
   cursor: pointer;
 }
 .footer {
-  background: url(./img/Shape\ 1.png) no-repeat transparent;
+  background: url(./img/Shape_1.png) no-repeat transparent;
   width: 58px;
   height: 13px;
   position: absolute;
@@ -213,8 +210,6 @@ body {
   overflow: auto;
   padding-right: 30px;
   transform: scaleX(-1);
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
 }
 
 .second-container__text-child {
@@ -242,7 +237,7 @@ body {
   transform: rotate(180deg);
 }
 
-.bottle {
+.third-container__bottle {
   position: absolute;
   top: 70px;
   left: 46px;
@@ -524,20 +519,22 @@ body {
   transition: all ease 1s;
 }
 .pagination {
-  margin-top: 10px;
   display: flex;
   justify-content: space-between;
   width: 100px;
   align-items: center;
 }
-.popup__prev {
+.popup__pagination {
+  margin-top: 10px;
+}
+.pagination__btn-prev {
   background: url(./img/page3/btn_1.png) no-repeat transparent;
   border: none;
   border-radius: 4px;
   width: 15px;
   height: 20px;
 }
-.popup__next {
+.pagination__btn-next {
   background: url(./img/page3/btn_next.png) no-repeat transparent;
   border: none;
   border-radius: 4px;
@@ -545,13 +542,13 @@ body {
   height: 20px;
 }
 
-.pag-1 {
+.pagination__sircle-1 {
   width: 15px;
   height: 15px;
   border: 1px solid black;
   border-radius: 50%;
 }
-.pag-2 {
+.pagination__sircle-2 {
   width: 15px;
   height: 15px;
   border: 1px solid black;
